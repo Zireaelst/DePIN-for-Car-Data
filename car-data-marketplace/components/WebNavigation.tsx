@@ -132,7 +132,7 @@ export const WebNavigation = () => {
             <TextInput
               style={styles.searchInput}
               placeholder="Search marketplace..."
-              placeholderTextColor="rgba(0,0,0,0.4)"
+              placeholderTextColor="#444444"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.nativeEvent.text)}
               onKeyPress={(e) => {
@@ -183,21 +183,21 @@ export const WebNavigation = () => {
             style={styles.dropdownItem} 
             onPress={navigateToProfile}
           >
-            <Ionicons name="person-outline" size={18} color={textColor} style={styles.dropdownIcon} />
-            <ThemedText>Profile</ThemedText>
+            <Ionicons name="person-outline" size={18} color="#000000" style={styles.dropdownIcon} />
+            <ThemedText style={{ color: '#000000', fontWeight: '500' }}>Profile</ThemedText>
           </TouchableOpacity>
           <TouchableOpacity style={styles.dropdownItem}>
-            <Ionicons name="wallet-outline" size={18} color={textColor} style={styles.dropdownIcon} />
-            <ThemedText>Wallet</ThemedText>
+            <Ionicons name="wallet-outline" size={18} color="#000000" style={styles.dropdownIcon} />
+            <ThemedText style={{ color: '#000000', fontWeight: '500' }}>Wallet</ThemedText>
           </TouchableOpacity>
           <TouchableOpacity style={styles.dropdownItem}>
-            <Ionicons name="settings-outline" size={18} color={textColor} style={styles.dropdownIcon} />
-            <ThemedText>Settings</ThemedText>
+            <Ionicons name="settings-outline" size={18} color="#000000" style={styles.dropdownIcon} />
+            <ThemedText style={{ color: '#000000', fontWeight: '500' }}>Settings</ThemedText>
           </TouchableOpacity>
           <View style={styles.dropdownDivider} />
-          <TouchableOpacity style={styles.dropdownItem}>
+          <TouchableOpacity style={[styles.dropdownItem, styles.signOutItem]}>
             <Ionicons name="log-out-outline" size={18} color="#FF3B30" style={styles.dropdownIcon} />
-            <ThemedText style={{ color: '#FF3B30' }}>Sign Out</ThemedText>
+            <ThemedText style={{ color: '#FF3B30', fontWeight: '600' }}>Sign Out</ThemedText>
           </TouchableOpacity>
         </View>
       )}
@@ -205,7 +205,7 @@ export const WebNavigation = () => {
       {showNotifications && (
         <View id="notifications-dropdown" style={styles.notificationDropdown}>
           <View style={styles.notificationHeader}>
-            <ThemedText type="subtitle">Notifications</ThemedText>
+            <ThemedText type="subtitle" style={{color: '#222222', fontWeight: '600', fontSize: 16}}>Notifications</ThemedText>
             <TouchableOpacity>
               <ThemedText style={styles.markAllRead}>Mark all as read</ThemedText>
             </TouchableOpacity>
@@ -214,7 +214,7 @@ export const WebNavigation = () => {
           <View style={styles.notificationItem}>
             <View style={[styles.notificationDot, styles.notificationUnread]} />
             <View style={styles.notificationContent}>
-              <ThemedText type="defaultSemiBold">Data Purchased</ThemedText>
+              <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>Data Purchased</ThemedText>
               <ThemedText style={styles.notificationText}>
                 Your purchase of Vehicle Speed Data was successful.
               </ThemedText>
@@ -225,7 +225,7 @@ export const WebNavigation = () => {
           <View style={styles.notificationItem}>
             <View style={[styles.notificationDot, styles.notificationUnread]} />
             <View style={styles.notificationContent}>
-              <ThemedText type="defaultSemiBold">New Earnings</ThemedText>
+              <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>New Earnings</ThemedText>
               <ThemedText style={styles.notificationText}>
                 You received $2.56 from data shared by your vehicle today.
               </ThemedText>
@@ -236,7 +236,7 @@ export const WebNavigation = () => {
           <View style={styles.notificationItem}>
             <View style={styles.notificationDot} />
             <View style={styles.notificationContent}>
-              <ThemedText type="defaultSemiBold">System Update</ThemedText>
+              <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>System Update</ThemedText>
               <ThemedText style={styles.notificationText}>
                 DeCharge marketplace has been updated with new features.
               </ThemedText>
@@ -245,7 +245,7 @@ export const WebNavigation = () => {
           </View>
           
           <TouchableOpacity style={styles.viewAllNotifications}>
-            <ThemedText style={{ color: '#007AFF' }}>View all notifications</ThemedText>
+            <ThemedText style={{ color: '#0057CC', fontWeight: '600', fontSize: 14 }}>View all notifications</ThemedText>
           </TouchableOpacity>
         </View>
       )}
@@ -280,7 +280,7 @@ export const WebNavigation = () => {
             <View style={styles.notificationItem}>
               <View style={[styles.notificationDot, styles.notificationUnread]} />
               <View style={styles.notificationContent}>
-                <ThemedText type="defaultSemiBold">Data Purchased</ThemedText>
+                <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>Data Purchased</ThemedText>
                 <ThemedText style={styles.notificationText}>
                   Your purchase of Vehicle Speed Data was successful.
                 </ThemedText>
@@ -291,7 +291,7 @@ export const WebNavigation = () => {
             <View style={styles.notificationItem}>
               <View style={[styles.notificationDot, styles.notificationUnread]} />
               <View style={styles.notificationContent}>
-                <ThemedText type="defaultSemiBold">New Earnings</ThemedText>
+                <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>New Earnings</ThemedText>
                 <ThemedText style={styles.notificationText}>
                   You received $2.56 from data shared by your vehicle today.
                 </ThemedText>
@@ -302,7 +302,7 @@ export const WebNavigation = () => {
             <View style={styles.notificationItem}>
               <View style={styles.notificationDot} />
               <View style={styles.notificationContent}>
-                <ThemedText type="defaultSemiBold">System Update</ThemedText>
+                <ThemedText type="defaultSemiBold" style={{color: '#111111', fontSize: 15}}>System Update</ThemedText>
                 <ThemedText style={styles.notificationText}>
                   DeCharge marketplace has been updated with new features.
                 </ThemedText>
@@ -311,7 +311,7 @@ export const WebNavigation = () => {
             </View>
             
             <TouchableOpacity style={styles.viewAllNotifications}>
-              <ThemedText style={{ color: '#007AFF' }}>View all notifications</ThemedText>
+              <ThemedText style={{ color: '#0057CC', fontWeight: '600', fontSize: 14 }}>View all notifications</ThemedText>
             </TouchableOpacity>
           </ThemedView>
         </TouchableOpacity>
@@ -388,10 +388,12 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: 'rgba(0,0,0,0.1)',
     borderRadius: 20,
     paddingLeft: 16,
     width: 200,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.12)',
   },
   searchInput: {
     height: 36,
@@ -411,36 +413,40 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   actionButton: {
-    padding: 8,
-    borderRadius: 8,
+    padding: 10,
+    borderRadius: 10,
     position: 'relative',
   },
   activeActionButton: {
-    backgroundColor: 'rgba(0,122,255,0.1)',
+    backgroundColor: 'rgba(0,122,255,0.15)',
   },
   userButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,122,255,0.1)',
-    paddingHorizontal: 12,
+    backgroundColor: 'rgba(0,87,204,0.12)',
+    paddingHorizontal: 14,
+    borderRadius: 10,
   },
   userName: {
     marginLeft: 6,
-    fontWeight: '500',
+    fontWeight: '600',
+    color: '#333333',
   },
   dropdownIcon: {
     marginLeft: 6,
   },
   notificationBadge: {
     position: 'absolute',
-    top: 4,
-    right: 4,
+    top: 3,
+    right: 3,
     backgroundColor: '#FF3B30',
-    width: 16,
-    height: 16,
-    borderRadius: 8,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1.5,
+    borderColor: 'white',
   },
   notificationCount: {
     color: 'white',
@@ -452,89 +458,101 @@ const styles = StyleSheet.create({
     top: '100%',
     right: 24,
     backgroundColor: 'white',
-    borderRadius: 8,
+    borderRadius: 12,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    padding: 8,
-    marginTop: 4,
-    width: 180,
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    padding: 10,
+    marginTop: 8,
+    width: 200,
     zIndex: 1000,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.05)',
   },
   dropdownItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
-    borderRadius: 6,
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 2,
+  },
+  signOutItem: {
+    // Specific styles for sign out item
   },
   dropdownDivider: {
     height: 1,
     backgroundColor: 'rgba(0,0,0,0.08)',
-    marginVertical: 8,
+    marginVertical: 10,
   },
   notificationDropdown: {
     position: 'absolute',
     top: '100%',
     right: 24,
-    backgroundColor: 'white',
-    borderRadius: 8,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    padding: 12,
-    marginTop: 4,
-    width: 320,
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    padding: 14,
+    marginTop: 8,
+    width: 340,
     zIndex: 1000,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.1)',
   },
   notificationHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 12,
-    paddingBottom: 8,
+    marginBottom: 14,
+    paddingBottom: 10,
     borderBottomWidth: 1,
-    borderBottomColor: 'rgba(0,0,0,0.08)',
+    borderBottomColor: 'rgba(0,0,0,0.12)',
   },
   markAllRead: {
-    fontSize: 12,
-    color: '#007AFF',
+    fontSize: 14,
+    color: '#0057CC', 
+    fontWeight: '600',
   },
   notificationItem: {
     flexDirection: 'row',
-    paddingVertical: 10,
+    paddingVertical: 12,
     borderBottomWidth: 1,
-    borderBottomColor: 'rgba(0,0,0,0.05)',
+    borderBottomColor: 'rgba(0,0,0,0.08)',
   },
   notificationDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
     backgroundColor: 'transparent',
-    marginRight: 12,
+    marginRight: 14,
     marginTop: 6,
   },
   notificationUnread: {
-    backgroundColor: '#007AFF',
+    backgroundColor: '#0057CC',
   },
   notificationContent: {
     flex: 1,
   },
   notificationText: {
-    fontSize: 14,
-    opacity: 0.8,
-    marginTop: 2,
+    fontSize: 15,
+    color: '#333333',
+    opacity: 0.9,
+    marginTop: 4,
+    lineHeight: 20,
   },
   notificationTime: {
-    fontSize: 12,
-    opacity: 0.5,
-    marginTop: 4,
+    fontSize: 13,
+    color: '#555555',
+    marginTop: 6,
+    fontWeight: '500',
   },
   viewAllNotifications: {
     alignItems: 'center',
-    paddingVertical: 10,
-    marginTop: 4,
+    paddingVertical: 12,
+    marginTop: 6,
   },
   modalOverlay: {
     flex: 1,
@@ -545,20 +563,28 @@ const styles = StyleSheet.create({
   notificationsModal: {
     width: '90%',
     maxWidth: 400,
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: 14,
+    padding: 20,
     maxHeight: '80%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.05)',
   },
   modalHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
-    paddingBottom: 12,
+    paddingBottom: 14,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(0,0,0,0.08)',
   },
   modalTitle: {
-    fontSize: 20,
+    fontSize: 22,
+    fontWeight: '600',
+    color: '#222222',
   },
 });
