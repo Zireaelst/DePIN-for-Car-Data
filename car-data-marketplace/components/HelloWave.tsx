@@ -11,22 +11,27 @@ import Animated, {
 import { ThemedText } from '@/components/ThemedText';
 
 export function HelloWave() {
-  const rotationAnimation = useSharedValue(0);
+  // Animation for the car moving side to side
+  const moveAnimation = useSharedValue(0);
 
   useEffect(() => {
-    rotationAnimation.value = withRepeat(
-      withSequence(withTiming(25, { duration: 150 }), withTiming(0, { duration: 150 })),
-      4 // Run the animation 4 times
+    moveAnimation.value = withRepeat(
+      withSequence(
+        withTiming(5, { duration: 150 }),
+        withTiming(-5, { duration: 150 }),
+        withTiming(0, { duration: 150 })
+      ),
+      3 // Run the animation 3 times
     );
-  }, [rotationAnimation]);
+  }, [moveAnimation]);
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ rotate: `${rotationAnimation.value}deg` }],
+    transform: [{ translateX: moveAnimation.value }],
   }));
 
   return (
     <Animated.View style={animatedStyle}>
-      <ThemedText style={styles.text}>👋</ThemedText>
+      <ThemedText style={styles.text}>🚗</ThemedText>
     </Animated.View>
   );
 }

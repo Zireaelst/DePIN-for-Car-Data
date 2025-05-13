@@ -13,7 +13,8 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 // Import ThemedText component for the footer
 import { ThemedText } from './ThemedText';
 
-const HEADER_HEIGHT = Platform.OS === 'web' ? 320 : 250;
+// Increase header height to show more of the car image
+const HEADER_HEIGHT = Platform.OS === 'web' ? 280 : 240;
 const MAX_WIDTH = 1200;
 
 type Props = PropsWithChildren<{
@@ -190,6 +191,14 @@ const styles = StyleSheet.create({
   headerOverlay: {
     backgroundColor: '#000',
     opacity: 0,
+  },
+  headerImage: {
+    height: HEADER_HEIGHT,
+    width: '100%',
+    bottom: 0,
+    left: 0,
+    position: 'absolute', 
+    resizeMode: 'cover', // Make the image cover the entire space
   },
   content: {
     flex: 1,
